@@ -230,7 +230,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.insert(TABLE_ATTENDANCE, null, values);
     }
 
-    // Get attendance for a student
     public List<Attendance> getStudentAttendance(int studentId) {
         List<Attendance> attendanceList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.app">
+    package="com.uav">
+
+    <!-- Optional but good practice -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
 
+        <!-- Launcher Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -19,25 +23,34 @@
             </intent-filter>
         </activity>
 
+        <!-- Authentication -->
         <activity
             android:name=".SignInActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
 
+        <!-- Registration -->
         <activity
             android:name=".RegisterStudentActivity"
-            android:parentActivityName=".SignInActivity"/>
+            android:exported="false"
+            android:parentActivityName=".SignInActivity" />
 
         <activity
             android:name=".RegisterLecturerActivity"
-            android:parentActivityName=".SignInActivity"/>
+            android:exported="false"
+            android:parentActivityName=".SignInActivity" />
 
+        <!-- Dashboards -->
         <activity
             android:name=".StudentDashboardActivity"
-            android:launchMode="singleTop"/>
+            android:exported="false"
+            android:launchMode="singleTop" />
 
         <activity
             android:name=".LecturerDashboardActivity"
-            android:launchMode="singleTop"/>
+            android:exported="false"
+            android:launchMode="singleTop" />
+
     </application>
 
 </manifest>
